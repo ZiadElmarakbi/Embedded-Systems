@@ -1,0 +1,19 @@
+/*
+ * states.h
+ *
+ *  Created on: Oct 13, 2022
+ *      Author: Ziad
+ */
+
+#ifndef STATES_H_
+#define STATES_H_
+
+#include "driver.h"
+
+// Macros
+#define STATE_define(state) void ST_##state()
+#define STATE(state) St_##state
+
+
+
+#endif /* STATES_H_ */

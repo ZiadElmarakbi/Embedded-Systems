@@ -1,0 +1,38 @@
+/*
+ * Alarm_Manager.h
+ *
+ *  Created on: Oct 13, 2022
+ *      Author: Ziad
+ */
+
+#ifndef ALARM_MANAGER_H_
+#define ALARM_MANAGER_H_
+
+#define GreenLedTimer 3000 // 3 seconds delay
+#define YellowLedTimer 12000 // 12 seconds delay
+#define RedLedTimer 18000 // 18 seconds delay
+#define BuzzerBeep 1000 // 1 second delay
+#define threshold1 10
+#define threshold2 20
+
+#include "states.h"
+#include "IndicatorDriver.h"
+
+uint32_t i; //For beeping the buzzer until the Yellow led is off
+
+// Define States Present
+enum {
+	MonitorPressure,
+	Waiting
+}Alarm_Manager_State;
+
+extern Indicator_status AlarmIndicatorON(Indicator_status LEDstatus);
+extern Indicator_status AlarmIndicatorOFF(Indicator_status LEDstatus);
+extern void Set_Alarm_Indicator(Indicator_status LEDstatus);
+
+extern Define_State(MonitorPressure);
+extern Define_State(Waiting);
+extern void (*AM_ptr)();
+extern uint32_t pval;
+
+#endif

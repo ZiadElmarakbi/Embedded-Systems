@@ -1,0 +1,23 @@
+/*
+ * pressure_sensor.h
+ *
+ *  Created on: Oct 13, 2022
+ *      Author: Ziad
+ */
+
+#ifndef PRESSURE_SENSOR_H_
+#define PRESSURE_SENSOR_H_
+
+#include "states.h"
+
+enum {
+	ReadingPressureVal,
+	WaitingPressureVal
+}Pressure_sensor_state;
+
+// Only Declaring to be seen in the main file when including the header
+extern void STATE_define(ReadingPressureVal);
+extern void STATE_define(WaitingPressureVal);
+extern void (*PS_ptr)();
+
+#endif /* PRESSURE_SENSOR_H_ */
