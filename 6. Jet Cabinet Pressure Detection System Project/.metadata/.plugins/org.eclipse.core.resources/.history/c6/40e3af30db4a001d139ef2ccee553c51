@@ -1,0 +1,5 @@
+
+#include "Alarm_Manager.h"
+
+void (*AM_ptr)();
+

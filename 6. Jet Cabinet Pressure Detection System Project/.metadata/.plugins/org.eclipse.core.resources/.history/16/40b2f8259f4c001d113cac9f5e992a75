@@ -1,0 +1,14 @@
+
+#ifndef DATATYPE_H_
+#define DATATYPE_H_
+
+typedef enum {
+	Green_On,
+	Green_Off,
+	Yellow_On,
+	Yellow_Off,
+	Red_On,
+	Red_Off
+}Indicator_status;
+
+#endif /* DATATYPE_H_ */

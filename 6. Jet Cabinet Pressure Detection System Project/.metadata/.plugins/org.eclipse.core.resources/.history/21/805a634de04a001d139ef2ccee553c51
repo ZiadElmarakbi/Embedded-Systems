@@ -1,0 +1,31 @@
+/*
+ * Alarm_Buzzer_Driver.c
+ *
+ *  Created on: Oct 13, 2022
+ *      Author: Ziad
+ */
+#include "BuzzerDriver.h"
+
+void (*AB_ptr)();
+
+void startAlarmbuzzer(){
+
+
+}
+
+void stopAlarmIndicator(){
+
+}
+
+Define_State(BuzzAlarm){
+
+
+
+}
+
+Define_State(BuzzIdle){
+
+
+
+
+}

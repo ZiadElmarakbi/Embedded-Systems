@@ -1,0 +1,27 @@
+/*
+ * BuzzerDriver.h
+ *
+ *  Created on: Oct 13, 2022
+ *      Author: Ziad
+ */
+
+#ifndef BUZZERDRIVER_H_
+#define BUZZERDRIVER_H_
+
+#include "states.h"
+
+enum{
+	Alarming,
+	Idle
+}Alarm_Buzzer_status;
+
+
+
+
+
+
+extern Define_State(Alarming);
+extern Define_State(Idle);
+extern void (*AB_ptr)();
+
+#endif /* BUZZERDRIVER_H_ */

@@ -1,0 +1,37 @@
+11:14:51 **** Clean-only build of configuration Debug for project Project 1 - Led Toggle ****
+make -j16 clean 
+rm -rf ./Startup/startup_stm32f103c6tx.d ./Startup/startup_stm32f103c6tx.o
+rm -rf ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf Project\ 1\ -\ Led\ Toggle.elf Project\ 1\ -\ Led\ Toggle.hex Project\ 1\ -\ Led\ Toggle.list Project\ 1\ -\ Led\ Toggle.map Project\\ 1\\ -\\ Led\\ Toggle.elf default.size.stdout
+BusyBox v1.31.0.st_20200221-0903_longpath (2020-02-21 09:54:30 UTC) multi-call binary
+
+Usage: rm [-irf] FILE...
+
+Remove (unlink) FILEs
+
+	-i	Always prompt before removing
+	-f	Never prompt
+	-R,-r	Recurse
+rm: unknown option -- \
+make: [makefile:87: clean] Error 1 (ignored)
+ 
+11:14:51 **** Build of configuration Debug for project Project 1 - Led Toggle ****
+make -j16 all 
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f103c6tx.d" -MT"Startup/startup_stm32f103c6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Startup/startup_stm32f103c6tx.o" "../Startup/startup_stm32f103c6tx.s"
+arm-none-eabi-gcc -gdwarf-2 "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc -gdwarf-2 "../Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc -o "Project 1 - Led Toggle.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Embedded SW Engineering\New Repo (Current)\Embedded C\Project 1 - Led Toggle\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Project 1 - Led Toggle.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Project 1 - Led Toggle.elf
+ 
+arm-none-eabi-size   Project\ 1\ -\ Led\ Toggle.elf 
+arm-none-eabi-objdump -h -S  Project\ 1\ -\ Led\ Toggle.elf  > "Project 1 - Led Toggle.list"
+arm-none-eabi-objcopy  -O ihex  Project\ 1\ -\ Led\ Toggle.elf  "Project 1 - Led Toggle.hex"
+   text	   data	    bss	    dec	    hex	filename
+    672	     12	   1564	   2248	    8c8	Project 1 - Led Toggle.elf
+Finished building: default.size.stdout
+ 
+Finished building: Project 1 - Led Toggle.hex
+Finished building: Project 1 - Led Toggle.list
+ 
+ 
