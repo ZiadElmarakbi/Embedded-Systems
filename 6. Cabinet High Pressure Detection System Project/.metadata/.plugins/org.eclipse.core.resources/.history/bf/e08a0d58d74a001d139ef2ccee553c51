@@ -1,6 +1,0 @@
-
-#include "Alarm_manager.h"
-
-uint32_t threshold1 = 10, threshold2 = 20;
-
-

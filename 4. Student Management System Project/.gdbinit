@@ -1,2 +1,0 @@
-set new-console on
-
