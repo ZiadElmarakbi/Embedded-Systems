@@ -1,0 +1,55 @@
+/*
+ * Alarm_Indicator_Driver.c
+ *
+ *  Created on: Oct 13, 2022
+ *      Author: Ziad
+ */
+#include "IndicatorDriver.h"
+
+void (*AI_ptr)(Indicator_status);
+
+void Alarm_Indicator_init(){
+	AI_ptr = State(IndicatorIdle);
+}
+
+// Indicator_status LEDstatus;
+
+//void AlarmIndicatorOFF(Indicator_status LEDstatus){
+//	AI_ptr = State(IndicatorIdle);
+//}
+
+void AlarmIndicatorON(Indicator_status LEDstatus){
+	AI_ptr = ST_IndicatorAlarm;
+	AI_ptr(LEDstatus);
+	// AI_ptr(Indicator_status);
+	// return LEDstatus;
+}
+
+void ST_IndicatorAlarm(Indicator_status LEDstatus){
+
+	Alarm_Indicator_Status = IndicatorAlarm;
+
+	if(LEDstatus == Green_On)
+		Set_Alarm_Indicator(Green_On);
+
+	else if(LEDstatus == Red_On)
+		Set_Alarm_Indicator(Red_On);
+
+	else if(LEDstatus == Yellow_On)
+		Set_Alarm_Indicator(Yellow_On);
+}
+//
+//Define_State(IndicatorIdle){
+//
+//	// Alarm_Indicator_Status = IndicatorIdle;
+//	LEDstatus = AlarmIndicatorOFF(LEDstatus);
+//
+//	if(LEDstatus == Green_Off)
+//		Set_Alarm_Indicator(Green_Off);
+//
+//	else if(LEDstatus == Red_Off)
+//		Set_Alarm_Indicator(Red_Off);
+//
+//	else if(LEDstatus == Yellow_Off)
+//		Set_Alarm_Indicator(Yellow_Off);
+//}

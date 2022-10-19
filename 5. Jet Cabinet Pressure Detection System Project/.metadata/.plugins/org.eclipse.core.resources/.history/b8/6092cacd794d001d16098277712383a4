@@ -1,0 +1,39 @@
+
+#include "Pressure_Sensor.h"
+
+void (*Pressure_Sensor_ptr2Fun)();
+
+uint32_t pval;
+
+void Pressure_Sensor_init(){
+
+	Pressure_Sensor_ptr2Fun = State(WaitingPressureVal);
+
+	printf("Initializing Pressure Sensor...\n");
+	fflush(stdin); fflush(stdout);
+	printf("-------Pressure Sensor Initialized Successfully !!-------\n\n");
+	fflush(stdin); fflush(stdout);
+}
+
+Define_State(ReadingPressureVal){
+
+	Pressure_sensor_state = ReadingPressureVal;
+
+ // pval = getPressureVal(); // Get pressure Value from Sensor
+	pval = generate_random(8,21,1);
+	printf("Pressure Sensor Value: %d bar\n",pval);
+	fflush(stdin); fflush(stdout);
+	Flash_Memory_ptr2Fun(pval);
+
+
+	Delay(1000); // Set Sensor Timer
+	Pressure_Sensor_ptr2Fun = State(WaitingPressureVal);
+}
+
+Define_State(WaitingPressureVal){
+
+	Pressure_sensor_state =  WaitingPressureVal;
+
+	Pressure_Sensor_ptr2Fun = State(ReadingPressureVal);
+	Pressure_Sensor_ptr2Fun();
+}
